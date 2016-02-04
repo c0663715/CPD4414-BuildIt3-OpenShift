@@ -6,6 +6,6 @@
         <title>JSP Web Page</title>
     </head>
     <body>
-        <% out.print(Jbosswildfly.getJSON()); %>
+        <% //out.print(Jbosswildfly.getJSON()); %>
     </body>
 </html>
