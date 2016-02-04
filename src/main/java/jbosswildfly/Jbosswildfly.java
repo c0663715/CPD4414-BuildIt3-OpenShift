@@ -47,9 +47,9 @@ public class Jbosswildfly {
             ResultSet rs = stmt.executeQuery("SELECT * FROM people");
             while (rs.next()) {
                 JsonObject obj = new JsonObject();
-                obj.addProperty("id", rs.getInt("id"));
-                obj.addProperty("name", rs.getString("name"));
-                obj.addProperty("bio", rs.getString("bio"));
+              //  obj.addProperty("id", rs.getInt("id"));
+                //obj.addProperty("name", rs.getString("name"));
+                //obj.addProperty("bio", rs.getString("bio"));
                 arr.add(obj);
             }
             output = arr.toString();
@@ -71,9 +71,9 @@ public class Jbosswildfly {
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 JsonObject obj = new JsonObject();
-                obj.addProperty("id", rs.getInt("id"));
-                obj.addProperty("name", rs.getString("name"));
-                obj.addProperty("bio", rs.getString("bio"));
+                //obj.addProperty("id", rs.getInt("id"));
+                //obj.addProperty("name", rs.getString("name"));
+                //obj.addProperty("bio", rs.getString("bio"));
                 arr.add(obj);
             }
             output = arr.toString();
