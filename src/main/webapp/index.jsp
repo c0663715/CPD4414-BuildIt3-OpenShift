@@ -19,12 +19,12 @@
                     if (strId != null && !strId.isEmpty()) {
                         try {
                             int id = Integer.parseInt(strId);
-                            out.print(jbosswildfly.getJSON(id));
+                            out.print(Jbosswildfly.getJSON(id));
                         } catch (NumberFormatException ex) {
                             out.print("Error with ID. " + strId + " is not a number.");
                         }
                     } else {
-                        out.print(jbosswildfly.getJSON());
+                        out.print(Jbosswildfly.getJSON());
                     }
                 %>
             </div>
