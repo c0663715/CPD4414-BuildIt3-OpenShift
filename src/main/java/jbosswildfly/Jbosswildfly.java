@@ -47,13 +47,12 @@ public class Jbosswildfly {
             ResultSet rs = stmt.executeQuery("SELECT * FROM people");
             while (rs.next()) {
                 JsonObject obj = new JsonObject();
-                int id=rs.getInt("id");
-                String name=rs.getString("name");
-                String bio= rs.getString("bio");
-                //arr.add(obj);
-                output+="<p>"+name+": "+bio+"</p>";
+                obj.addProperty("id", rs.getInt("id"));
+                obj.addProperty("name", rs.getString("name"));
+                obj.addProperty("bio", rs.getString("bio"));
+                arr.add(obj);
             }
-            //output = arr.toString();
+            output = arr.toString();
             conn.close();
         } catch (SQLException ex) {
             output = "SQL Exception Error: " + ex.getMessage();
@@ -71,12 +70,11 @@ public class Jbosswildfly {
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                //JsonObject obj = new JsonObject();
-                id=rs.getInt("id");
-                String name=rs.getString("name");
-                String bio= rs.getString("bio");
-                //arr.add(obj);
-                output+="<p>"+name+": "+bio+"</p>";
+                JsonObject obj = new JsonObject();
+                obj.addProperty("id", rs.getInt("id"));
+                obj.addProperty("name", rs.getString("name"));
+                obj.addProperty("bio", rs.getString("bio"));
+                arr.add(obj);
             }
             output = arr.toString();
             conn.close();
